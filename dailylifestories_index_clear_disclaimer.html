@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DailyLifeStories</title>
+<meta name="description" content="DailyLifeStories – short English stories about everyday life, choices, friendships and growing up.">
+<style>
+:root{--ink:#22333b;--muted:#6b7b83;--cream:#fffaf1;--paper:#fff;--coral:#ef7c6d;--sun:#f5c65d;--aqua:#62c8c4;--teal:#2b7a78;--sky:#eaf7f7;--line:#e6eceb;--shadow:0 14px 36px rgba(34,51,59,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 5%,rgba(245,198,93,.22),transparent 26%),radial-gradient(circle at 90% 12%,rgba(98,200,196,.22),transparent 28%),linear-gradient(180deg,#fffdf8 0%,#f7fbfa 100%);line-height:1.55}a{color:inherit}
+.site-header{max-width:1180px;margin:0 auto;padding:28px 24px 14px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px;text-decoration:none}.brand-mark{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--sun),var(--coral));display:grid;place-items:center;box-shadow:0 8px 20px rgba(239,124,109,.18);font-size:20px}nav a{text-decoration:none;color:var(--muted);font-weight:700;margin-left:24px}nav a:hover{color:var(--teal)}
+.hero{max-width:1180px;margin:0 auto;padding:72px 24px 56px;display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center}.kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:#fff3cf;color:#8b6816;font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.hero h1{font-size:clamp(3.2rem,8vw,6.4rem);line-height:.92;margin:18px 0 20px;letter-spacing:-.055em}.hero h1 span{color:var(--teal)}.hero p{max-width:680px;font-size:1.12rem;color:var(--muted);margin:0 0 30px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid transparent}.btn-primary{background:var(--teal);color:#fff;box-shadow:0 9px 22px rgba(43,122,120,.20)}.btn-secondary{background:#fff;border-color:var(--line)}
+.hero-art{min-height:410px;border-radius:32px;position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(255,255,255,.2),transparent 38%),linear-gradient(135deg,#63cbc5 0%,#dff7f4 48%,#f6c75d 100%);box-shadow:var(--shadow)}.sun{width:130px;height:130px;border-radius:50%;background:#ffd86f;position:absolute;right:42px;top:42px;box-shadow:0 0 0 20px rgba(255,255,255,.15)}.hill{position:absolute;left:-10%;right:-10%;bottom:-14%;height:58%;border-radius:50% 50% 0 0;background:#277e76;transform:rotate(-5deg)}.hill.two{left:18%;right:-28%;bottom:-21%;height:58%;background:#174f53;transform:rotate(7deg)}.art-card{position:absolute;left:32px;bottom:32px;width:min(330px,75%);padding:22px;border-radius:20px;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);box-shadow:0 14px 32px rgba(0,0,0,.13)}.art-card small{display:block;color:var(--coral);font-weight:800;text-transform:uppercase;letter-spacing:.1em}.art-card strong{display:block;font-size:1.55rem;margin:4px 0}.art-card span{color:var(--muted);font-size:.93rem}
+.section{max-width:1180px;margin:0 auto;padding:46px 24px 64px}.section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:22px}.section-head h2,.about h2{font-size:clamp(2rem,4vw,3.2rem);margin:0;letter-spacing:-.035em}.section-head p{max-width:520px;margin:0;color:var(--muted)}.series-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}.series-card,.coming-card{background:var(--paper);border:1px solid var(--line);border-radius:24px;box-shadow:0 8px 24px rgba(34,51,59,.06);overflow:hidden}.series-visual{min-height:240px;padding:28px;display:flex;align-items:end;background:linear-gradient(120deg,rgba(43,122,120,.92),rgba(98,200,196,.82));color:#fff;position:relative}.series-visual:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.12);right:-40px;top:-48px}.series-visual .label{position:relative;z-index:1}.series-visual small{text-transform:uppercase;letter-spacing:.12em;font-weight:800;opacity:.9}.series-visual h3{font-size:2.6rem;margin:5px 0 4px;line-height:1}.series-body{padding:26px}.series-body p{color:var(--muted);margin-top:0}.story-link{margin-top:18px;padding:16px 17px;background:var(--cream);border:1px solid #f0e5cf;border-radius:14px;display:flex;justify-content:space-between;gap:18px;align-items:center;text-decoration:none}.story-link:hover{border-color:#e4c77f}.story-link strong{display:block}.story-link span{font-size:.88rem;color:var(--muted)}.arrow{font-size:1.25rem;font-weight:800;color:var(--coral)}.coming-card{padding:28px;display:flex;flex-direction:column;justify-content:space-between;min-height:100%;background:linear-gradient(145deg,#fff 0%,#fffaf0 100%)}.coming-icon{width:52px;height:52px;border-radius:16px;background:#fff0c7;display:grid;place-items:center;font-size:22px}.coming-card h3{font-size:1.6rem;margin:20px 0 8px}.coming-card p{color:var(--muted)}.pill{align-self:flex-start;margin-top:24px;padding:7px 11px;border-radius:999px;background:#f3f6f5;color:var(--muted);font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:34px;align-items:start}.about-copy{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px}.about-copy p{margin-top:0;color:var(--muted)}
+.disclaimer{max-width:1180px;margin:0 auto 70px;padding:0 24px}.disclaimer-box{background:#23383f;color:#fff;border-radius:22px;padding:26px 28px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}.disclaimer-icon{width:44px;height:44px;border-radius:13px;background:rgba(255,255,255,.10);display:grid;place-items:center;font-size:20px}.disclaimer h2{font-size:1.25rem;margin:0 0 8px}.disclaimer p{margin:0;color:#dce6e8;max-width:850px}footer{border-top:1px solid var(--line);padding:24px;color:var(--muted);text-align:center;font-size:.9rem}
+@media(max-width:850px){nav{display:none}.hero,.series-grid,.about{grid-template-columns:1fr}.hero{padding-top:48px}.hero-art{min-height:330px}.section-head{display:block}.section-head p{margin-top:10px}}
+@media(max-width:560px){.site-header,.hero,.section,.disclaimer{padding-left:16px;padding-right:16px}.hero h1{font-size:3.35rem}.hero-art{min-height:300px}.art-card{left:18px;bottom:18px}.disclaimer-box{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#"><span class="brand-mark">D</span><span>DailyLifeStories</span></a>
+  <nav><a href="#stories">Stories</a><a href="#about">About</a><a href="#disclaimer">Disclaimer</a></nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <span class="kicker">English reading · A1–B1</span>
+      <h1>Stories about<br><span>everyday life.</span></h1>
+      <p>Short English stories about teenagers, choices, friendship, holidays and the small things that make daily life interesting.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#stories">Explore the stories</a>
+        <a class="btn btn-secondary" href="#about">About DailyLifeStories</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="sun"></div><div class="hill"></div><div class="hill two"></div>
+      <div class="art-card"><small>Featured series</small><strong>Teenlife</strong><span>Real-life themes. Short stories. Different levels.</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="stories">
+    <div class="section-head">
+      <div><span class="kicker">Series</span><h2>Start reading</h2></div>
+      <p>Each series looks at daily life from a different angle. Choose a story and read at your own level.</p>
+    </div>
+
+    <div class="series-grid">
+      <article class="series-card">
+        <div class="series-visual">
+          <div class="label"><small>Series 01</small><h3>Teenlife</h3><div>Growing up, being yourself and everyday choices.</div></div>
+        </div>
+        <div class="series-body">
+          <p>Meet different teenagers and read about their lives, holidays, friends and experiences. Choose the reading level that suits you.</p>
+          <a class="story-link" href="this_summer_standalone_light.html">
+            <div><strong>This Summer</strong><span>Six teenagers · six holidays · A1, A2 and B1</span></div>
+            <div class="arrow">→</div>
+          </a>
+        </div>
+      </article>
+
+      <aside class="coming-card">
+        <div><div class="coming-icon">＋</div><h3>More stories are coming</h3>
+        <p>DailyLifeStories can grow with new Teenlife stories and new series about school, home, friendship, travel and everyday situations.</p></div>
+        <span class="pill">More soon</span>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div><span class="kicker">About</span><h2>Read. Think. Talk.</h2></div>
+    <div class="about-copy">
+      <p><strong>DailyLifeStories</strong> is made for English learners. The stories use clear English and familiar situations.</p>
+      <p>Some stories have different question levels. This means you can choose questions that feel right for you, or try a more difficult level for an extra challenge.</p>
+    </div>
+  </section>
+
+  <section class="disclaimer" id="disclaimer">
+    <div class="disclaimer-box">
+      <div class="disclaimer-icon">i</div>
+      <div><h2>AI disclaimer</h2>
+      <p>All stories, characters and images on DailyLifeStories are created with AI. They are fictional and are not meant to show or describe real people. Any similarity in name, appearance, situation or story to a real person is completely by chance and is not intended.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>DailyLifeStories · English stories for everyday learning</footer>
+</body>
+</html>
