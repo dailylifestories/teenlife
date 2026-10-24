@@ -16,6 +16,7 @@
 .disclaimer{max-width:1180px;margin:0 auto 70px;padding:0 24px}.disclaimer-box{background:#23383f;color:#fff;border-radius:22px;padding:26px 28px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}.disclaimer-icon{width:44px;height:44px;border-radius:13px;background:rgba(255,255,255,.10);display:grid;place-items:center;font-size:20px}.disclaimer h2{font-size:1.25rem;margin:0 0 8px}.disclaimer p{margin:0;color:#dce6e8;max-width:850px}footer{border-top:1px solid var(--line);padding:24px;color:var(--muted);text-align:center;font-size:.9rem}
 @media(max-width:850px){nav{display:none}.hero,.series-grid,.about{grid-template-columns:1fr}.hero{padding-top:48px}.hero-art{min-height:330px}.section-head{display:block}.section-head p{margin-top:10px}}
 @media(max-width:560px){.site-header,.hero,.section,.disclaimer{padding-left:16px;padding-right:16px}.hero h1{font-size:3.35rem}.hero-art{min-height:300px}.art-card{left:18px;bottom:18px}.disclaimer-box{grid-template-columns:1fr}}
+.series-button{display:block;text-decoration:none;transition:transform .18s,box-shadow .18s}.series-button:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.series-button:focus-visible{outline:3px solid var(--teal);outline-offset:5px}.series-button .series-body p{margin-bottom:0}@media(prefers-reduced-motion:reduce){.series-button{transition:none}}
 </style>
 </head>
 <body>
@@ -48,32 +49,23 @@
     </div>
 
     <div class="series-grid">
-      <article class="series-card">
+      <a class="series-card series-button" href="series1.html" aria-label="TeenLife">
         <div class="series-visual">
           <div class="label"><small>Series 01</small><h3>TeenLife</h3><div>Growing up, being yourself and everyday choices.</div></div>
         </div>
         <div class="series-body">
           <p>Start with the profiles in Meet the Teens. Then read Introductions, Family &amp; Friends, Spare Time and Holidays. Choose questions at A1, A2 or B1.</p>
-          <a class="story-link" href="meet-the-teens.html"><div><strong>Meet the Teens</strong><span>Read six short profiles. Who would you like to follow?</span></div><div class="arrow" aria-hidden="true">→</div></a>
-          <a class="story-link" href="series1.html" aria-label="Open Series 1 TeenLife">
-            <div><strong>Explore Series 1 – TeenLife</strong><span>Meet the Teens · Introductions · Family &amp; Friends · Spare Time · Holidays</span></div>
-            <div class="arrow">→</div>
-          </a>
         </div>
-      </article>
+      </a>
 
-      <article class="series-card">
+      <a class="series-card series-button" href="series2.html" aria-label="Dilemma Stories">
         <div class="series-visual" style="background:linear-gradient(120deg,#b95149,#ef9a76)">
           <div class="label"><small>Series 02</small><h3>Dilemma Stories</h3><div>Small choices. Different stories.</div></div>
         </div>
         <div class="series-body">
           <p>Follow teenagers in everyday situations. Choose what they do and discover how their choices change the story.</p>
-          <a class="story-link" href="series2.html" aria-label="Open Series 02: Dilemma Stories">
-            <div><strong>Series 02: Dilemma Stories</strong><span>Choices have consequences. Explore everyday situations and discover how choices change the outcome.</span></div>
-            <div class="arrow" aria-hidden="true">→</div>
-          </a>
         </div>
-      </article>
+      </a>
     </div>
   </section>
 
