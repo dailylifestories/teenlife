@@ -39,7 +39,7 @@
     .topic h3{color:var(--navy);font-size:1.43rem;margin:19px 0 8px}
     .topic p{margin:0 0 18px;color:var(--muted)}
     .action{margin-top:auto;display:inline-flex;gap:9px;align-items:center;align-self:flex-start;background:var(--teal);border-radius:999px;color:white;padding:9px 18px;font-weight:700;min-height:44px}
-    .topic:nth-child(2) .action{background:#d9674f}
+    .topic:last-child .action{background:#d9674f}.profile-start{grid-column:1/-1;min-height:210px;background:linear-gradient(120deg,#fff,#f0fbf8)}
     .tip{margin-top:22px;padding:17px 20px;background:#fff9e8;border:1px solid #f2df9d;border-radius:14px;color:#66542e}
     footer{border-top:1px solid var(--line);padding:23px 20px;text-align:center;color:var(--muted);font-size:.87rem}
     footer p{margin:5px 0}
@@ -62,31 +62,19 @@
   </header>
   <main>
     <section class="intro" aria-label="How TeenLife works">
-      <h2>Choose a theme</h2>
-      <p>Follow the same six teenagers through stories about their everyday lives. Choose a theme, read a story and answer the questions.</p>
+      <h2>Start with the people</h2>
+      <p>Read the profiles first. Then get to know the same six teenagers through stories about their families, friends, free time and holidays.</p>
       <p><strong>Everyone reads the same story.</strong> You choose the level of the <strong>questions</strong>: A1, A2 or B1.</p>
     </section>
     <div class="topics-head">
-      <h2>Explore the stories</h2>
-      <p class="subtle">Six familiar characters. Different themes. Questions at three levels.</p>
+      <h2>Explore TeenLife</h2>
+      <p class="subtle">Start with Meet the Teens. Then choose a story theme.</p>
     </div>
-    <nav class="cards" aria-label="Series 1 themes">
-      <a class="topic" href="introductions.html">
-        <div class="picture" aria-hidden="true">👋</div>
-        <h3>Introductions</h3>
-        <p>Meet Luca, Noah, Abby, Ameena, Raheem and Mia. Find out about their families, school, friends and interests.</p>
-        <span class="action">Read introductions <span aria-hidden="true">→</span></span>
-      </a>
-      <a class="topic" href="holidays.html">
-        <div class="picture holidays" aria-hidden="true">☀️</div>
-        <h3>Holidays</h3>
-        <p>Read about six different holidays, from a quiet lake and the coast to a survival camp and a canoe trip.</p>
-        <span class="action">Read holidays <span aria-hidden="true">→</span></span>
-      </a>
-    </nav>
-    <aside class="tip"><strong>How it works:</strong> Read the story first, then choose A1, A2 or B1 for the comprehension questions.</aside>
+    <nav class="cards" aria-label="Series 1 themes"><a class="topic profile-start" href="meet-the-teens.html"><div class="picture" aria-hidden="true">👤</div><h3>Meet the Teens</h3><p>Read short profiles of all six people. Find out what they enjoy and who you would like to follow.</p><span class="action">Meet everyone <span aria-hidden="true">→</span></span></a><a class="topic" href="All_About_Me.html"><div class="picture" aria-hidden="true">👋</div><h3>Introductions</h3><p>Read how Noah, Abby, Ameena, Luca, Raheem and Mia introduce themselves.</p><span class="action">Read introductions <span aria-hidden="true">→</span></span></a><a class="topic" href="family-and-friends.html"><div class="picture" aria-hidden="true">🏡</div><h3>Family &amp; Friends</h3><p>Get to know their families and friends. Read about life at home and time together.</p><span class="action">Read family &amp; friends <span aria-hidden="true">→</span></span></a><a class="topic" href="spare-time.html"><div class="picture" aria-hidden="true">🎨</div><h3>Spare Time</h3><p>Find out what they like doing after school and at weekends, from sport to music and quiet time.</p><span class="action">Read spare time <span aria-hidden="true">→</span></span></a><a class="topic" href="Holidays.html"><div class="picture holidays" aria-hidden="true">☀️</div><h3>Holidays</h3><p>End with six summer holidays, from a quiet lake and the sea to a camp and a canoe trip.</p><span class="action">Read holidays <span aria-hidden="true">→</span></span></a></nav>
+    <aside class="tip"><strong>How it works:</strong> The profiles help you get to know everyone. In each story theme, read first and then choose A1, A2 or B1 questions.</aside>
   </main>
   <footer>
+    <p><a href="index.html">← Back to DailyLifeStories</a></p>
     <p>DailyLifeStories – TeenLife · Fictional characters, stories and AI-generated images.</p>
     <p>No student account required. No tracking.</p>
   </footer>
