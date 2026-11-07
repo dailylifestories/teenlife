@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The Photo: an interactive Dilemma Story about private messages, a fake online account and making difficult choices. A1/A2 English.">
+<title>The Photo – Dilemma Stories | DailyLifeStories</title>
+<style>
+
+
+:root{color-scheme:light;--ink:#173638;--green:#245c50;--paper:#fffdf6}*{box-sizing:border-box}body{margin:0;background:#f1eee4;color:var(--ink);font:18px/1.65 system-ui,sans-serif}header{padding:24px 6%;border-bottom:1px solid #d5d9ca;display:flex;justify-content:space-between;gap:12px;align-items:center}.brand{font-weight:850;letter-spacing:-1px;font-size:24px}.brand span{color:#bb5739}.tag{font-size:12px;letter-spacing:2px;text-transform:uppercase}main{max-width:1080px;margin:48px auto;padding:0 24px;display:grid;grid-template-columns:240px 1fr;gap:48px}aside h1{font:700 48px/1.06 Georgia,serif;letter-spacing:-2px;margin:18px 0}aside p{font-size:15px;color:#536860}.pill{display:inline-block;background:#dee7d6;padding:4px 12px;border-radius:30px;font-size:12px;font-weight:700}.card{background:var(--paper);border:1px solid #d9ddce;border-radius:22px;padding:36px;box-shadow:0 14px 45px #233e2210}h2{font:700 31px/1.2 Georgia,serif;margin:12px 0 24px}p{margin:0 0 18px}.meta{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#637665}.choices{display:grid;gap:12px;margin-top:25px}button{font:inherit;cursor:pointer}button.choice{background:#f3f4e9;color:var(--ink);border:1px solid #ccd5c4;text-align:left;padding:16px 18px;border-radius:12px;display:flex;gap:16px;line-height:1.45}button.choice:hover{background:#e1ead8;border-color:var(--green);transform:translateY(-1px)}button:focus-visible{outline:3px solid #b95636;outline-offset:3px}.letter{font-size:13px;font-weight:800;color:var(--green);padding-top:3px}.tools{display:flex;justify-content:space-between;margin-top:24px;gap:12px}.quiet{border:0;background:transparent;color:#4a6458;font-size:14px;padding:8px}.progress{height:5px;border-radius:8px;background:#dce2d2;margin:24px 0}.progress div{height:100%;background:#bb5739;border-radius:8px}footer{text-align:center;padding:25px;font-size:12px;color:#617367}.note{border-left:3px solid #b95636;padding-left:18px}.reflection{background:#e7ecdd;padding:20px;border-radius:12px}details{font-size:14px;margin-top:28px}summary{cursor:pointer}ol{padding-left:22px}li{margin:10px 0}@media(max-width:760px){main{grid-template-columns:1fr;margin-top:24px;gap:18px}aside h1{font-size:40px;margin:10px 0}aside p{margin-bottom:10px}.card{padding:24px}header{padding:16px 24px}.tag{display:none}}
+
+.site-links{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px;position:relative;z-index:2}.site-links a{display:inline-block;padding:8px 13px;border:1px solid #cfeae7;border-radius:10px;background:white;color:#145a63;text-decoration:none;font-size:.88rem;font-weight:700}.site-links a:focus-visible{outline:3px solid #145a63;outline-offset:3px}
+
+main>.site-links{grid-column:1/-1;margin-bottom:-24px}.story-part+.story-part{border-top:1px solid #d9ddce;margin-top:28px;padding-top:22px}.choice-note{font-size:.86rem;color:#536860;margin:24px 0 0}.choices button{width:100%}.quiet:disabled{opacity:.35;cursor:default}.tools{flex-wrap:wrap}.reading-help{line-height:1.6}.card h2:focus{outline:none}.progress{margin-bottom:10px}.part-heading{font-family:Georgia,serif;font-size:25px}@media(max-width:760px){main>.site-links{margin-bottom:0}.card{padding:22px}body{font-size:17px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+main>.site-links{grid-column:1/-1;margin-bottom:-24px}.story-part+.story-part{border-top:1px solid #d9ddce;margin-top:28px;padding-top:22px}.choice-note{font-size:.86rem;color:#536860;margin:24px 0 0}.choices button{width:100%}.quiet:disabled{opacity:.35;cursor:default}.tools{flex-wrap:wrap}.reading-help{line-height:1.6}.card h2:focus{outline:none}.progress{margin-bottom:10px}.part-heading{font-family:Georgia,serif;font-size:25px}@media(max-width:760px){main>.site-links{margin-bottom:0}.card{padding:22px}body{font-size:17px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* Story 02 additions; original Story 01 styling is retained above */
+.message-panel{background:#f3f4e9;border:1px solid #d8ddcd;border-radius:14px;padding:17px 19px;margin:18px 0 22px}
+.message-panel .message-title{font-size:13px;font-weight:750;letter-spacing:.035em;color:#4f6860;margin:0 0 12px}
+.message{border-top:1px solid #dbe1d3;padding:9px 0;font-size:16px;line-height:1.5}
+.message:first-of-type{border-top:0}
+.message-name{color:#245c50;font-weight:800;margin-right:7px}
+.message-muted{font-style:italic;color:#617468}
+.reveal{border-left:4px solid #bb5739;background:#f8eee6;border-radius:0 10px 10px 0;padding:15px 18px;margin:18px 0 22px;font-weight:750}
+.decision-list{list-style:none;margin:8px 0 12px;padding:0}
+.decision-list li{display:flex;justify-content:space-between;gap:18px;border-bottom:1px solid #ccd7c6;padding:12px 0;margin:0;font-size:15px}
+.decision-list li:last-child{border-bottom:0}
+.decision-list b{text-align:right;color:#245c50;max-width:54%}
+.reflection ol{padding-left:24px;margin:10px 0 0}
+.reflection li{padding-left:3px;margin:11px 0}
+.reflection p{font-size:16px}
+.story-section-end{padding:20px;border:1px solid #d7dcca;border-radius:14px;background:#faf8f0;margin-top:18px}
+.story-section-end h3{font:700 25px/1.25 Georgia,serif;margin:0 0 9px}
+.story-section-end p:last-child{margin-bottom:0}
+.primary-action{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#245c50;border:1px solid #245c50;color:#fff;border-radius:11px;padding:13px 19px;font-size:15px;font-weight:750;min-height:46px;cursor:pointer}
+.primary-action:hover{background:#19483e}
+.primary-action:focus-visible{outline:3px solid #b95636;outline-offset:4px}
+.choice-note{font-size:14px}
+.tools .quiet:hover{text-decoration:underline}
+.reading-help p{margin:12px 0}
+.action-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:20px}
+.reflection-heading{font:700 27px/1.2 Georgia,serif;color:#245c50;margin:0 0 10px}
+.hero-subtitle{font-weight:500}
+@media(max-width:760px){.decision-list li{flex-direction:column;gap:4px}.decision-list li b{text-align:left;max-width:none}.message-panel{padding:14px}}
+@media print{header,.site-links,.tools,.choices,.action-row,aside details{display:none!important}body{background:white}main{display:block;margin:0;padding:0}aside{margin-bottom:24px}.card{border:0;box-shadow:none;padding:0}.story-part{break-inside:avoid}.reflection{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">DailyLife<span>Stories.</span></div>
+  <div class="tag">Dilemma Stories / Story 02</div>
+</header>
+<main>
+  <nav class="site-links" aria-label="Site navigation">
+    <a href="series2.html">← Dilemma Stories</a>
+    <a href="index.html">Home</a>
+  </nav>
+  <aside>
+    <span class="pill">A1–A2 ENGLISH</span>
+    <h1>The<br>Photo</h1>
+    <p class="hero-subtitle">One private photo.<br>Five decisions.<br>Different consequences.</p>
+    <div class="progress" role="progressbar" aria-label="Story progress" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><div id="bar" style="width:0%"></div></div>
+    <p id="step" aria-live="polite"></p>
+    <details class="reading-help">
+      <summary>Reading help · Leeshulp</summary>
+      <p>Je speelt Noah. Kies wat Noah doet en lees wat er gebeurt. Je keuzes hebben gevolgen voor de rest van het verhaal.</p>
+      <p>Je kunt terug naar een eerdere keuze. Aan het einde zie je jouw beslissingen en reflectievragen.</p>
+      <p><b>screenshot</b> = schermafbeelding<br><b>forward</b> = doorsturen<br><b>private</b> = privé<br><b>fake account</b> = nepaccount<br><b>trust</b> = vertrouwen<br><b>mentor</b> = mentor</p>
+    </details>
+  </aside>
+  <section>
+    <article class="card" id="story" aria-label="Noah's story"></article>
+    <div class="tools">
+      <button type="button" class="quiet" id="back">← Previous choice</button>
+      <button type="button" class="quiet" id="restart">Start again ↺</button>
+    </div>
+  </section>
+</main>
+<footer>DailyLifeStories · Dilemma Stories · Fictional characters and story. No tracking.</footer>
+<script>
+'use strict';
+// Standalone story: no cookies, accounts, analytics, network calls or storage.
+const state={decisions:[],reflecting:false};
+const choiceSets=[
+  [
+    {id:'forward',label:'Forward the screenshot to the football group'},
+    {id:'quiet',label:"Don't forward it, but say nothing"},
+    {id:'stop',label:'Tell Finn to stop sharing it'}
+  ],
+  [
+    {id:'yes',label:'Tell Daniel about the screenshot'},
+    {id:'no',label:"Pretend he doesn't know anything"}
+  ],
+  [
+    {id:'daniel',label:'Tell Daniel that Leah is Evie'},
+    {id:'leah',label:'Talk to Leah and ask her to tell Daniel'},
+    {id:'nothing',label:'Say nothing and stay out of it'}
+  ],
+  [
+    {id:'open',label:'Tell Daniel they need help and speak to their mentor'},
+    {id:'none',label:"Promise Daniel he won't tell anyone"},
+    {id:'secret',label:'Tell their mentor without telling Daniel first'}
+  ],
+  [
+    {id:'yes',label:'Ask Daniel if he wants to talk or needs help'},
+    {id:'no',label:'Leave Daniel alone and join his friends'}
+  ]
+];
+const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
+const P=text=>({type:'p',text});
+const REVEAL=text=>({type:'reveal',text});
+const CHAT=(title,...messages)=>({type:'chat',title,messages});
+const c=(i)=>state.decisions[i]?.id||'';
+const has=(i,key)=>c(i)===key;
+function chapter(i){
+  if(i===0)return {
+    title:'The message',time:'Monday · 7:45 am',
+    blocks:[
+      P('Noah is on the bus to school when his phone vibrates. There is a new message in the class group chat.'),
+      P('His friend Finn has sent a screenshot of a private conversation. It is between Daniel, a boy from their class, and a girl called Evie.'),
+      P('The screenshot also shows a photo of Daniel standing by a swimming pool. He is wearing swimming shorts. It is a normal photo, but it was meant for one person.'),
+      CHAT('Class 2B · Screenshot of a private chat',
+        ['Evie','I wish I could see you right now 😊'],
+        ['Daniel',"I'm at the pool with my family."],
+        ['Evie','Send me a photo!'],
+        ['Daniel','OK, but just for you.'],
+        ['Photo attached','Daniel standing by a swimming pool'],
+        ['Evie','You look cute ❤️'],
+        ['Daniel','I really like you.']),
+      CHAT('Class 2B · New messages',
+        ['Finn','HAHAHA! Look at Daniel! 😂'],
+        ['Max',"He's in love! 😂😂"],
+        ['Lily','Where did you get this?'],
+        ['Finn','Noah, send it to the football group!']),
+      P("Noah smiles at first. Daniel's messages are a bit embarrassing. But then he thinks about Daniel. He is quite shy and has only been at their school for a few months."),
+      P('Daniel is not in this group chat. Noah knows he would not want everyone to read his private messages.'),
+      P('Finn sends another message: “Come on, mate! It’s funny!”')
+    ]
+  };
+  if(i===1){
+    const blocks=[];
+    if(has(0,'forward'))blocks.push(
+      P('Noah forwards the screenshot to the football group. Within minutes, several students send laughing emojis.'),
+      CHAT('Football group',['Jack','Is that Daniel from 2B? 😂'],['Sam',"I'm sending this to Ryan!"],['Finn','Nice one, Noah! 😂']),
+      P("Ten minutes later, the screenshot is in other group chats. Noah didn't expect it to spread so quickly."));
+    else if(has(0,'quiet'))blocks.push(
+      P("Noah decides not to forward the screenshot. He puts his phone away and looks out of the window."),
+      P('When he checks his phone again, there are thirty new messages. Students are making jokes about Daniel. Someone from another class has seen the screenshot too.'));
+    else blocks.push(
+      P('Noah writes a message in the class group.'),
+      CHAT('Class 2B',['Noah',"Stop sharing it. It's private."],['Finn',"Relax, mate. It's just a joke!"],['Max',"Don't be so serious 😂"],['Lily','Noah is right. Delete it.']),
+      P('Finn sends Noah a private message: “Why are you making a big deal out of this?” Noah knows Finn might be angry with him.'));
+    blocks.push(
+      P('At school, Daniel walks up to Noah near the lockers.'),
+      P('“Hey, can I ask you something?” Daniel says.'),
+      P('“Why is everyone acting so strange? Two boys laughed at me in the corridor. One asked me about my girlfriend.”'),
+      P('Noah does not know what to say.'),
+      P('“I haven’t got a girlfriend,” Daniel says. Then he smiles. “Well, I’m talking to someone online. Her name is Evie. We met in a game three weeks ago.”'),
+      P('“Have you met her?” Noah asks.'),
+      P('“No, she lives near Manchester. But we chat almost every evening. I think she likes me.”'),
+      P('Daniel looks happy. Noah knows something Daniel does not.'));
+    return {title:'At school',time:'Monday · 8:35 am',blocks};
+  }
+  if(i===2){
+    const blocks=[];
+    if(has(1,'yes')){
+      blocks.push(P('Noah asks Daniel to come with him to a quiet place.'),P('“There is something I need to tell you. Someone has shared a screenshot of your messages with Evie.”'),P('Daniel looks shocked. “What? Who?”'),P('“Finn sent it to our class group.”'),P('“But I only sent that photo to Evie!”'));
+      if(has(0,'forward'))blocks.push(P('Noah looks down. “I need to tell you something else. I sent it to the football group.”'),P('“You did what?” Daniel says. “You are supposed to be my friend!”'),P('Daniel walks away. Noah knows he has hurt him.'));
+      else blocks.push(P('“Did you share it?” Daniel asks.'),P('“No,” Noah answers.'),P('“Thanks for telling me,” Daniel says. “I just don’t understand why she would do this.”'));
+    }else{
+      blocks.push(P('“No, sorry,” Noah says. “I don’t know.”'),P('Daniel goes to his next lesson.'),P('Later, Noah sees Daniel looking at his phone. Someone has sent him the screenshot. Several students are watching him. Daniel looks upset.'));
+    }
+    blocks.push(
+      P('During break, Noah goes to his locker. He hears Finn talking to Leah, a girl from their class.'),
+      P('“Why did you share it?” Leah asks.'),
+      P('“You sent it to me!” Finn says.'),
+      P('“Yes, but not to the whole class!”'),
+      P('Finn laughs. “You made the fake account. It was your idea!”'),
+      P('“Keep your voice down!” Leah says.'),
+      P('“You knew it was Daniel when you started talking to him.”'),
+      P('“I know! It was supposed to be a joke. I didn’t think he would really like me!”'),
+      REVEAL('Leah is Evie.'),
+      P('Leah made a second account in the online game and started talking to Daniel. Daniel never knew he was talking to someone from his own class.'),
+      P('Last night, Leah sent Finn screenshots of their conversation. Finn then shared them.'),
+      P('Noah now knows the truth, but Daniel does not.'));
+    return {title:'The secret',time:'Monday · 10:45 am',blocks};
+  }
+  if(i===3){
+    const blocks=[];
+    if(has(2,'daniel')){
+      blocks.push(P('Noah finds Daniel after their last lesson.'),P('“There is something else you need to know.”'),P('Noah tells him what he heard near the lockers.'),P('“Leah? From our class?” Daniel asks.'),P('Noah nods.'),P('“But why? I told Evie things I do not tell anyone at school. Was everything a joke to her?”'));
+    }else if(has(2,'leah')){
+      blocks.push(P('Noah finds Leah near the lockers.'),P('“I heard what you said to Finn.”'),P('Leah looks frightened. “Please don’t tell Daniel!”'),P('“You need to tell him the truth,” Noah says.'),P('“I can’t. He will hate me!”'),P('“He thinks Evie is a real girl.”'),P('Leah looks down at her phone. “I’ll think about it.”'),P('Noah is not sure if she really will.'));
+    }else{
+      blocks.push(P('Noah decides not to get involved. He does not want problems with Finn or Leah.'),P('But he keeps thinking about Daniel. Daniel still believes Evie is a real girl from another town.'));
+    }
+    blocks.push(P('That afternoon, Noah gets a private message from Daniel.'),CHAT('Daniel · Private chat',
+      ['Daniel','Everyone has seen my messages.'],['Daniel','I feel so stupid.'],
+      ['Daniel',has(2,'daniel')?'I cannot believe Leah did this.':'I do not know who I can trust.'],
+      ['Daniel','Please do not tell a teacher.'],['Daniel','My parents might find out.'],['Daniel',"I'm scared they'll take my phone away."],
+      ['Daniel','Promise you will not tell anyone.']));
+    if(has(0,'forward'))blocks.push(P('Noah thinks about his part in the problem. He shared the screenshot too. Daniel is already angry with him.'));
+    blocks.push(P('Noah understands why Daniel is scared. But students are still sharing the screenshot.'),P('Their mentor could help. Daniel has asked Noah not to tell anyone. Noah does not want to lose his trust.'));
+    return {title:'The promise',time:'Monday · 4:20 pm',blocks};
+  }
+  if(i===4){
+    const blocks=[];
+    if(has(3,'open')){
+      blocks.push(
+        P('Noah sends Daniel a message: “I understand you are scared. But I think we need help. Can we talk to our mentor together?”'),
+        P('“No, please,” Daniel replies.'),
+        P('“I do not want you to deal with this alone. I am going to ask her for help.”'),
+        P('Daniel does not answer.'),
+        P('The next morning, Noah explains the situation to their mentor. He tells her that Daniel is worried about his parents.'));
+      if(has(0,'forward'))blocks.push(P('Noah also tells her that he shared the screenshot. “We will need to talk about that too,” she says.'));
+      blocks.push(P('“I will speak to Daniel privately first,” the mentor says. “He needs to know we are here to help him.”'),P('Later, Daniel agrees to talk to her. He is still upset, but she listens carefully.'));
+    }else if(has(3,'secret')){
+      blocks.push(P('Noah decides to tell his mentor without informing Daniel.'),P('He shows her the messages and explains what happened.'));
+      if(has(0,'forward'))blocks.push(P('He also admits that he forwarded the screenshot.'));
+      blocks.push(P('Later that day, Daniel finds Noah near the lockers.'),P('“You told her?”'),P('“Yes. I thought she could help.”'),P('“But I asked you not to!”'),P('“I am sorry.”'),P('Daniel shakes his head. “I do not know who I can trust any more.”'),P('Noah wanted to help, but Daniel is angry that Noah did not tell him first.'));
+    }else{
+      blocks.push(P('Noah sends Daniel a message: “OK. I promise.”'),P('Daniel replies with a thumbs-up.'),P('Noah feels better for a moment. At least Daniel still trusts him.'),P('But the next morning, the screenshot appears in another group chat.'),CHAT('Football group',['Jack','Have you seen the Daniel screenshot? 😂'],['Ryan','Everyone has!'],['Finn','Stop sending it now. Seriously.']),P('Even Finn seems worried. Keeping a promise has not made the problem disappear.'));
+    }
+    blocks.push(P('At lunch, Noah sees Daniel sitting alone on a bench. Usually, Daniel sits with his friends. Today, he is looking at the ground.'));
+    if(has(0,'forward'))blocks.push(P('Noah knows Daniel is still angry with him for forwarding the screenshot.'));
+    else if(has(3,'secret'))blocks.push(P('Noah knows Daniel is angry because he spoke to their mentor without telling him first.'));
+    else blocks.push(P('Noah does not know if Daniel wants to talk about what happened.'));
+    blocks.push(P('Finn is standing near the football pitch. “Noah! Are you coming?”'),P('Noah looks at Daniel again.'));
+    return {title:'The next day',time:'Tuesday · 12:15 pm',blocks};
+  }
+}
+function ending(){
+  const blocks=[];
+  if(has(3,'none')){
+    blocks.push(P('The screenshot is no longer being shared in the class group, but some students are still making jokes about Daniel.'),P('Nobody has told the mentor what happened.'));
+    if(has(2,'daniel'))blocks.push(P('Daniel knows that Leah made the fake account. He is angry with her and does not want to talk to her.'));
+    else if(has(2,'leah'))blocks.push(P('Leah still has not told Daniel the truth. Noah wonders if she ever will.'));
+    else blocks.push(P('Daniel still does not know who Evie really is.'));
+    blocks.push(P('Noah kept his promise, but Daniel is still having a difficult time at school.'));
+  }else{
+    blocks.push(P('The school has spoken to Daniel, Leah and Finn.'),P('Leah admits that she made the fake account. She says she never wanted everyone to see the messages.'),P('Finn says he thought the screenshot was funny. He did not expect other students to share it.'),P('The mentor explains that it is serious to share private messages without permission.'),P('Students are asked to delete the screenshot and stop sharing it. Some have deleted it, but nobody knows if every copy is gone.'),P('Daniel is getting help, but he still finds it difficult to trust people.'));
+  }
+  if(has(0,'forward'))blocks.push(P('Noah thinks about the screenshot he sent. It took one second to forward it. Now he wishes he could take it back. But he cannot.'));
+  else if(has(0,'stop'))blocks.push(P('Finn has hardly spoken to Noah this week. He thinks Noah made a big problem out of a joke. Noah does not like arguing with his friend.'));
+  if(has(4,'yes')){
+    blocks.push(P('At lunch, Noah walks over to Daniel.'),P('“Hey. Is it OK if I sit here?”'),P('Daniel shrugs.'));
+    if(has(0,'forward'))blocks.push(P('“I am sorry I shared the screenshot,” Noah says.'),P('“Why did you do it?”'),P('“Everyone was laughing. I did not think about what could happen.”'),P('“Well, it was not funny for me.”'),P('“I know. I am really sorry.”'),P('Daniel is quiet for a moment. “I do not know if I can trust you again.”'),P('“I understand,” Noah says. They sit in silence. Saying sorry does not mean Daniel has to forgive him.'));
+    else if(has(3,'secret'))blocks.push(P('“I know you are angry with me,” Noah says.'),P('“You told our mentor when I asked you not to.”'),P('“I thought she could help. But I should have told you first.”'),P('“She was actually really nice,” Daniel says. “But I was scared when she asked to speak to me.”'),P('“I am sorry.”'),P('“I know you wanted to help. Just talk to me first next time, OK?”'));
+    else if(has(3,'open'))blocks.push(P('“How are you doing?” Noah asks.'),P('“A bit better. I talked to our mentor again.”'),P('“That is good.”'),P('“I am still angry with Leah.”'),P('“I understand.”'),P('Daniel looks at Noah. “Thanks for helping me. I was scared to tell anyone.”'),P('For the first time this week, Daniel smiles a little.'));
+    else blocks.push(P('“Are you OK?” Noah asks.'),P('“Not really. I am scared everyone will keep laughing at me.”'),P('“Maybe we should talk to our mentor. I can come with you.”'),P('Daniel thinks for a moment. “Can I think about it?”'),P('“Of course.” Nothing is solved yet, but Daniel knows someone wants to help him.'));
+  }else{
+    blocks.push(P('Noah looks at Daniel but decides not to go over to him. He joins Finn near the football pitch.'),P('“Everything OK?” Finn asks.'),P('“Yeah,” Noah replies.'),P('But when Noah looks back, Daniel is still sitting alone. Noah wonders if Daniel wanted someone to talk to.'));
+  }
+  let title='A difficult week';
+  if(has(3,'none'))title='The problem is not over';
+  else if(has(0,'forward'))title='A mistake that cannot be undone';
+  else if(has(3,'secret'))title='Trying to help';
+  return {title,time:'Friday · After school',blocks};
+}
+function blockHTML(b){
+  if(b.type==='p')return `<p>${esc(b.text)}</p>`;
+  if(b.type==='reveal')return `<div class="reveal">${esc(b.text)}</div>`;
+  if(b.type==='chat')return `<section class="message-panel" aria-label="${esc(b.title)}"><p class="message-title">${esc(b.title)}</p>${b.messages.map(([name,message])=>`<div class="message"><span class="message-name">${esc(name)}:</span><span class="${name==='Photo attached'?'message-muted':''}">${esc(message)}</span></div>`).join('')}</section>`;
+  return '';
+}
+const responses=[
+  ['Shared the screenshot',()=>has(0,'forward')?'Yes':has(0,'stop')?'No; told Finn to stop':'No; said nothing'],
+  ['Told Daniel about the screenshot',()=>has(1,'yes')?'Yes':'No'],
+  ['Responded to Leah',()=>has(2,'daniel')?'Told Daniel':has(2,'leah')?'Spoke to Leah':'Did nothing'],
+  ['Involved the mentor',()=>has(3,'open')?'Yes; told Daniel first':has(3,'secret')?'Yes; without telling Daniel':'No'],
+  ['Offered Daniel help',()=>has(4,'yes')?'Yes':'No']
+];
+function reflection(){
+  const questions=[
+    'Are you happy with the choices you made? Why or why not?',
+    has(0,'forward')?'You shared the screenshot. Why did you make that choice?':'You did not share the screenshot. Why did you make that choice?',
+    'Did you tell Daniel about the screenshot? Why or why not?',
+    'Who do you think is most responsible: Leah, Finn or the students who shared the screenshot? Why?',
+    'Daniel asked you not to tell a teacher. What did you decide? Would you make the same choice again?',
+    'Do you think you did enough to help Daniel? Explain your answer.',
+    'Which choice was the most difficult for you? Why?',
+    'Would you make different choices if you played the story again? Explain.'
+  ];
+  return `<section class="story-part" id="reflection-section"><div class="meta">After the story</div><h2 id="heading-reflection" tabindex="-1">Reflection – Your Choices</h2><p>You have finished <em>The Photo</em>. Look at your decisions and think about why you made them.</p><section class="reflection" aria-label="Your decisions"><h3 class="reflection-heading">Your decisions</h3><ul class="decision-list">${responses.map(([label,fn])=>`<li><span>${esc(label)}</span><b>${esc(fn())}</b></li>`).join('')}</ul></section><section class="reflection" style="margin-top:18px" aria-label="Reflection questions"><h3 class="reflection-heading">Think about your choices</h3><ol>${questions.map(q=>`<li>${esc(q)}</li>`).join('')}</ol></section><div class="action-row"><button class="primary-action" id="restart-from-reflection">Play again ↺</button><button class="quiet" id="back-to-ending">← Back to ending</button><button class="quiet" id="copy-decisions">Copy my choices</button><span id="copy-status" role="status" aria-live="polite"></span></div></section>`;
+}
+function render(focus=false){
+  const count=state.decisions.length;
+  const story=document.getElementById('story');
+  let out='';
+  const last=Math.min(count,4);
+  for(let i=0;i<=last;i++){
+    const part=chapter(i);
+    out+=`<section class="story-part"><div class="meta">${esc(part.time)} · Part ${i+1}</div><h2 id="heading-${i}" tabindex="-1">${esc(part.title)}</h2>${part.blocks.map(blockHTML).join('')}`;
+    if(count>i)out+=`<p class="choice-note"><strong>Your choice:</strong> ${esc(state.decisions[i].label)}</p>`;
+    out+='</section>';
+  }
+  if(count<5){
+    out+='<section class="story-part" id="current-choice" aria-label="Choose what Noah does">';
+    out+='<p class="note"><strong>What should Noah do?</strong></p><div class="choices">';
+    choiceSets[count].forEach((choice,j)=>{
+      out+=`<button type="button" class="choice" data-choice="${esc(choice.id)}"><span class="letter" aria-hidden="true">${'ABC'[j]}</span><span>${esc(choice.label)}</span></button>`;
+    });
+    out+='</div></section>';
+  }else{
+    const end=ending();
+    out+=`<section class="story-part"><div class="meta">${esc(end.time)} · The ending</div><h2 id="heading-ending" tabindex="-1">${esc(end.title)}</h2>${end.blocks.map(blockHTML).join('')}<div class="story-section-end"><h3>The End</h3><p>The screenshot started as one private photo. Now many students have seen it.</p><p>Some choices made the problem worse. Other choices helped Daniel. But not everything can be fixed in one day.</p></div></section>`;
+    if(state.reflecting)out+=reflection();
+    else out+='<div class="action-row"><button type="button" class="primary-action" id="show-reflection">Reflection – Your Choices →</button></div>';
+  }
+  story.innerHTML=out;
+  story.querySelectorAll('[data-choice]').forEach(button=>button.addEventListener('click',()=>{
+    const choice=choiceSets[count].find(x=>x.id===button.dataset.choice);
+    if(!choice)return;
+    state.decisions.push(choice);state.reflecting=false;render(true);
+  }));
+  const reflButton=document.getElementById('show-reflection');
+  if(reflButton)reflButton.addEventListener('click',()=>{state.reflecting=true;render(true)});
+  const reflRestart=document.getElementById('restart-from-reflection');
+  if(reflRestart)reflRestart.addEventListener('click',restart);
+  const reflBack=document.getElementById('back-to-ending');
+  if(reflBack)reflBack.addEventListener('click',()=>{state.reflecting=false;render(true)});
+  const copyButton=document.getElementById('copy-decisions');
+  if(copyButton)copyButton.addEventListener('click',async()=>{
+    const text='The Photo – My Choices\n'+responses.map(([label,fn])=>`${label}: ${fn()}`).join('\n');
+    const status=document.getElementById('copy-status');
+    try{await navigator.clipboard.writeText(text);status.textContent='Copied!';}
+    catch(e){status.textContent='Copy is not available in this browser.';}
+  });
+  const back=document.getElementById('back');
+  back.disabled=(count===0&&!state.reflecting);
+  const step=document.getElementById('step');
+  step.textContent=state.reflecting?'Reflection · Your choices':count===5?'The end · Five choices':`Choice ${count+1} of 5`;
+  document.getElementById('bar').style.width=`${count/5*100}%`;
+  document.querySelector('[role="progressbar"]').setAttribute('aria-valuenow',String(count));
+  if(focus){
+    const targetId=state.reflecting?'heading-reflection':count===5?'heading-ending':`heading-${count}`;
+    const heading=document.getElementById(targetId);
+    if(heading){heading.focus({preventScroll:true});heading.scrollIntoView({block:'start',behavior:'auto'});}
+  }
+}
+function back(){
+  if(state.reflecting){state.reflecting=false;render(true);return;}
+  if(state.decisions.length>0){state.decisions.pop();render(true);}
+}
+function restart(){state.decisions=[];state.reflecting=false;render(false);window.scrollTo({top:0,behavior:'auto'});}
+document.getElementById('back').addEventListener('click',back);
+document.getElementById('restart').addEventListener('click',restart);
+render();
+</script>
+</body>
+</html>
